@@ -1,0 +1,61 @@
+*{
+  background-color: lightcyan; 
+}
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a,a:active {
+  color: #42b983;
+}
+
+
+/*Aqui empieza lo mio, ya se quitaran las de arriba*/
+
+/*.izq {
+  float: left;
+  width: 100px;
+  border-right: 1px  solid black; 
+}*/
+#navigation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+
+#navigation>ul {
+    width: 60%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around
+}
+#app {
+  display: flex;
+  flex-flow: column wrap;
+}
+.contenedor {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
