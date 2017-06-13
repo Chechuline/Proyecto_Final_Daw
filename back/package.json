@@ -1,7 +1,7 @@
 {
-  "name": "course_js_angular_mongo_",
+  "name": "back",
   "version": "1.0.0",
-  "description": "Curso Udemy aplicacion con nodejs, mongoDb, angular",
+  "description": "Backend proyecto fin de ciclo",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",

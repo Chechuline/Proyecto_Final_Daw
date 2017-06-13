@@ -1,6 +1,6 @@
 {
-  "name": "FrontProyecto",
-  "description": "A Vue.js project",
+  "name": "front",
+  "description": "Frontend proyecto fin de ciclo",
   "version": "1.0.0",
   "author": "Jesus Sabroso Centella",
   "private": true,
@@ -8,6 +8,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
+  "license": "ISC",
   "dependencies": {
     "axios": "^0.16.1",
     "vue": "^2.2.1",
