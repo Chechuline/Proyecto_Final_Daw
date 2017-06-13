@@ -8,7 +8,7 @@
                 <router-link to="/contacto">Contacto</router-link>
             </li>
             <li v-if="!logueado">
-                <router-link to="/login">Inicia Sesión</router-link>
+                <router-link to="/login">Entrar</router-link>
             </li>
             <li v-else>
                 <router-link :to="{name:'perfilUsuario',params: {userId: userId}}">Usuario</router-link>
@@ -46,11 +46,16 @@ export default {
 <style>
 /*normal size*/
 #navigation {
-    background-color: yellow;
+    background-color: lightsalmon;
+
+    min-height: 20px;
     height: 10vh;
-    margin: 0px 1px 0px 1px;
+    max-height: 50px;
+
+    /*margin: 0px 1px 10px 1px;*/
     padding: 0;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
+    
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
@@ -58,36 +63,58 @@ export default {
 }
 
 #navigation>ul {
+    background-color: lightsalmon;
     margin:0;
     padding:0;
-    width: 60vw;
+    width: 60%;
+    height: 100%;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around
+    justify-content: space-around;
+    
 }
 
 #navigation>ul> li {
-    
-    margin: 0%;
-    padding:0%;
+    padding: 10px 20px 0px 20px;
+    width: 25vw;
+    /*padding: 10px 0px 10px 0px;*/
+    background-color: lightsalmon;
+    margin: 0;
+    transition: background-color .3s ease;
+    /*padding-top:10px;*/
+}
+#navigation>ul> li:hover {
+    background-color: salmon;
+}
+#navigation a{
+    text-decoration: none;
+    color: white;
+}
+#navigation a:active{
+    text-decoration: none;
+    color: darksalmon;
 }
 /*small size*/
 @media all and (min-width: 320px) and (max-width: 480px) {
     #navigation {
-        background-color: red;
+        /*background-color: red;*/
     }
     #navigation>ul {
         width: 100vw;
         flex-flow: row nowrap;
     }
-    #navigation>ul > li{
+    #navigation>ul>li{
+        padding:10px;
         width: 100vw;
     }
 }
 /*medium size*/
 @media all and (min-width: 481px) and (max-width: 640px) {
     #navigation {
-        background-color: blue;
+        /*background-color: blue;*/
     } 
+    #navigation>ul>li{
+        padding:10px;
+    }
 }
 </style>

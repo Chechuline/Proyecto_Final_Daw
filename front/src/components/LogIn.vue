@@ -1,22 +1,27 @@
 
 <template>
-    <div>
-        <h2>{{msg}}</h2>
+    <div class='login'>
+        <h3>{{msg}}</h3>
         <form v-on:submit.prevent="logIn">
-            <p>Formulario LogIn</p>
             <span class="alert alert-danger" role="alert" v-if="error">
                 {{error}}
-            </span><br/>
-            <p>
-                <label for="title">Usuario/Email</label>
-                <input type="text" id="usuario" v-model="user.usuario" required>
-            </p>
-            <p>
-                <label for="title">Contraseña</label>
-                <input type="password" id="passwd" v-model="user.passwd" required>
-            </p>
-            <input type="submit" value="Conectar">
-            <router-link to="/register">Registrate</router-link>
+            </span>
+            <div class="form-group">
+                <strong>
+                    <label for="title" class="col-form-label">Usuario/Email</label>
+                </strong>
+                <input type="text" id="usuario" class="form-control" v-model="user.usuario" required>
+            </div>
+            <div class="form-group">
+                <strong>
+                    <label for="title">Contraseña</label>
+                </strong>
+                <input type="password" id="passwd" class="form-control" v-model="user.passwd" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Entrar" class="btn btn-info enviar">
+                <router-link to="/register">Registrate</router-link>
+            </div>
         </form>
     </div>
 </template>
@@ -27,7 +32,7 @@ export default {
     name: 'login',
     data() {
         return {
-            msg: 'LogIn',
+            msg: 'Login',
             error: '',
             user: {
                 usuario: '',
@@ -37,6 +42,7 @@ export default {
         }
     },
     methods: {
+        //llamada a la api para logueo
         logIn() {
             axios.post('http://localhost:3977/api/login', this.user)
                 .then((response) => {
@@ -59,3 +65,20 @@ export default {
     }
 }
 </script>
+<style>
+.login {
+
+    width: 100vw;
+    height: 80vh;
+    min-height: 450px;
+    display: flex;
+    flex-flow: column nowrap;
+    overflow: auto;
+}
+
+.enviar {
+    /*font: "fontawesome";
+    content: "\f2bd";*/
+    height: 40px;
+}
+</style>

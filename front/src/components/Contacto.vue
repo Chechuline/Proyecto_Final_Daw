@@ -4,7 +4,7 @@
       <h2>Esto es la {{msg}}</h2>
       <p>Nombre: {{name}}</p>
       <p>email: {{contact}}</p>
-      <p><a @click="goLinkedIn">(En simbolo de Linkedin)</a></p>
+      <p><a @click="goLinkedIn">LinkedIn</a></p>
     </div>
 </template>
 

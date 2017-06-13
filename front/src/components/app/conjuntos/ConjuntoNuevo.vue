@@ -1,5 +1,5 @@
 <template>
-	<div id="conjunto" class="container">
+	<div id="conjunto">
 		<h2>{{msg}}</h2>
 		<div class="alert alert-danger" role="alert" v-if="error">
 			{{error}}
@@ -12,29 +12,21 @@
 	
 			<button @click.prevent="addElemento" class="btn btn-outline-primary">Añadir pieza conjunto</button>
 	
-			<span v-if="elementos">
-				<span v-for="elemento in elementos">
-					<div class="form-group form-inline">
-						<span>
-							<label>nombre: </label>
-							<input class='form-control' type="text" v-model="elemento.nombre">
-						</span>
-						<br/>
-						<span>
-							<label>tags: </label>
-							<input class='form-control' type="text" v-model="elemento.tags">
-						</span>
-						<br/>
-						<span v-if="!elemento.imagen">Imagen:
-							<input type="file" class='image' v-bind:name="'imagen_'+pos" accept="image/*" @change="uploadImage">
-						</span>
-						<span v-else-if="elemento.imagen == 'subiendo' ">Subiendo...</span>
-						<img v-else v-bind:src="elemento.imagen" v-bind:alt="elemento.nombre + 'foto'" height="120px" width="120px" />
+				<div v-if="elementos" v-for="elemento in elementos" class="form-group form-inline contenedorPiezas">
+					<div>
+						<label>nombre: </label>
+						<input class='form-control' type="text" v-model="elemento.nombre">
 					</div>
-				</span>
-	
-			</span>
-	
+					<div>
+						<label>tags: </label>
+						<input class='form-control' type="text" v-model="elemento.tags">
+					</div>
+					<div v-if="!elemento.imagen">Imagen:
+						<input type="file" class='form-control-file' v-bind:name="'imagen_'+pos" accept="image/*" @change="uploadImage">
+					</div>
+					<div v-else-if="elemento.imagen == 'subiendo' ">Subiendo...</div>
+					<img v-else v-bind:src="elemento.imagen" v-bind:alt="elemento.nombre + 'foto'" />
+				</div>
 			<button type="submit" class="btn btn-info" v-bind:class="{disabled: !isValid}">Guardar</button>
 		</form>
 	</div>
@@ -115,7 +107,8 @@ export default {
 		},
 		addElemento() {
 			this.elementos.push({ nombre: '', tags: '', imagen: undefined, posicion: this.pos });
-			this.pos++;		}
+			this.pos++;
+		}
 	},
 	computed: {
 		isValid: function () {
@@ -128,6 +121,39 @@ export default {
 #conjunto {
 	float: right;
 	text-align: center;
-	width: 90%;
+	width: 100%;
+}
+
+#conjunto>form {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	margin: 0;
+}
+
+.contenedorPiezas {
+	height: 120px;
+	margin-left:20px;
+	width:90% !important;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+.contenedorPiezas input[type='text']{
+	width: 140px;
+}
+.contenedorPiezas input[type='file']{
+	width: 160px;
+}
+.contenedorPiezas img{
+	height:120px; 
+	width:120px;
+	margin-top: 5px;
+}
+@media all and (min-width: 320px) and (max-width: 640px) {
+	.contenedorPiezas{
+		height: auto;
+		flex-flow: column wrap;
+	}
 }
 </style>

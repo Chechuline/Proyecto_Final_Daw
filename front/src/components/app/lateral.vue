@@ -1,46 +1,25 @@
 <template>
-    <div class='izq'>
-        <!--antes de meter el buger menu
-                                    <div class='izq'>
-                                    <ul>
-                                        <li>
-                                            <router-link :to='{name: "perfilUsuario"}'>Perfil</router-link>
-                                        </li>
-                                        <li>
-                                            <router-link :to='{name: "conjuntos"}'>Conjuntos</router-link>
-                                            <ul v-if="conjuntos">
-                                                <span>Mis Conjuntos</span>
-                                                <li v-for="conjunto in conjuntos">
-                                                    <router-link :to="{name:'conjunto',params: {userId:userId,setId: conjunto._id},props:{editable:editable}}">{{conjunto.nombre}}</router-link>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                                        -->
+    <nav class='izq'>
+        <div id="burguerMenu">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <li>
+                    <router-link :to='{name: "perfilUsuario"}'>Perfil</router-link>
+                </li>
+                <li>
+                    <router-link :to='{name: "conjuntos"}'>Conjuntos</router-link>
+                </li>
+                <div v-if="conjuntos">Mis Conjuntos</div>
+                <li v-if="conjuntos" v-for="conjunto in conjuntos">
+                    <router-link :to="{name:'conjunto',params: {userId:userId,setId: conjunto._id},props:{editable:editable}}">{{conjunto.nombre}}</router-link>
+                </li>
     
-        <nav>
-            <div id="burguerMenu">
-                <input type="checkbox" />
-                <span></span>
-                <span></span>
-                <span></span>
-                <ul id="menu">
-                    <li>
-                        <router-link :to='{name: "perfilUsuario"}'>Perfil</router-link>
-                    </li>
-                    <li>
-                        <router-link :to='{name: "conjuntos"}'>Conjuntos</router-link>
-                        <div>Mis Conjuntos</div>
-                        <li v-if="conjuntos" v-for="conjunto in conjuntos">
-                            <router-link :to="{name:'conjunto',params: {userId:userId,setId: conjunto._id},props:{editable:editable}}">{{conjunto.nombre}}</router-link>
-                        </li>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    
-    </div>
+            </ul>
+        </div>
+    </nav>
 </template>
 
 <script>
@@ -100,30 +79,52 @@ export default {
 </script>
 <style>
 .izq {
+    color: lightblue;
+    background: rgba(239, 197, 202, 1);
+    background: linear-gradient(to right, rgba(239, 197, 202, 1) 0%, rgba(186, 39, 55, 1) 1%, rgba(210, 75, 90, 1) 50%, rgba(242, 132, 115, 1) 100%);
     display: flex;
     flex-flow: column nowrap;
     order: 0;
     width: 20vw;
     max-width: 20vw;
-    height: 80vh;
+    height: 94vh;
     border-right: 1px solid black;
 }
 
 .izq ul {
+    height: 40px;
     display: flex;
     flex-flow: column nowrap;
+}
+
+.izq ul>li {
+    padding: 10px 0px 10px 0px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.izq ul>div {
+    padding: 10px 0px 10px 0px;
+}
+
+.izq a {
+    color: white;
+    text-decoration: none;
+    transition: color .5s;
+}
+.izq a:hover{
+    color:black;
 }
 
 #burguerMenu>input {
     display: none;
 }
 
-
-/*small size*/
-
+/*small and medium size*/
 @media all and (min-width: 320px) and (max-width: 480px) {
     /* https://codepen.io/erikterwan/pen/EVzeRP */
     #burguerMenu {
+
         display: block;
         position: relative;
         top: 5vw;
@@ -149,6 +150,8 @@ export default {
     }
 
     #burguerMenu span {
+
+        
         display: block;
         width: 33px;
         height: 4px;
@@ -192,15 +195,20 @@ export default {
     }
 
     #menu {
+        
+        overflow:auto;
+        background: rgba(239, 197, 202, 1);
+        background: linear-gradient(to right, rgba(210, 75, 90, 1) 0%, rgba(242, 132, 115, 1) 100%);
+
         position: relative;
         display: flex;
         flex-flow: column nowrap;
         top: 60px;
-        left:30px;
+        left: 30px;
         width: 50vw;
         height: 80vw;
 
-        margin: -100px 0 0 -50px;
+        margin: -100px 0 0 -70px;
 
         list-style-type: none;
 
@@ -208,6 +216,9 @@ export default {
         transform: translate(-100%, 0);
 
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        -webkit-box-shadow: 7px 4px 8px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 7px 4px 8px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 7px 4px 8px 0px rgba(0, 0, 0, 0.75);
     }
 
     #menu>li {
@@ -226,6 +237,11 @@ export default {
         width: 0vw;
     }
 }
+
+
+
+
+
 
 
 

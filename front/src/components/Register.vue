@@ -1,5 +1,5 @@
 <template>
-    <div class="login">
+    <div class='login'>
         <h2>{{msg}}</h2>
         <span class="alert alert-danger" role="alert" v-if="error">
             {{error}}
@@ -8,30 +8,30 @@
             {{mensaje_respuesta}}
         </span>
         <form v-on:submit.prevent="register" v-if="!mensaje_respuesta"> 
-            <div class="form-group">
-                <label for="usuario">Usuario*:</label>
+            <p>
+                <strong><label for="usuario">Usuario*:</label></strong>
                 <input type="text" class="form-control" id='usuario' v-model="user.usuario" name="usuario" value="" required>
-            </div>
+            </p>
             
             <div class="form-group">
-                <label for="passwd">Contraseña*:</label>
+                <strong><label for="passwd">Contraseña*:</label></strong>
                 <input type="passwd" class="form-control" id='passwd' v-model="user.passwd" name="passwd" value="" required>
             </div>
             <div class="form-group">
-                <label for="email">Email*:</label>
+                <strong><label for="email">Email*:</label></strong>
                 <input type="text" class="form-control" id='email' v-model="user.email" name="email" value="" required>
             </div>
     
             <div class="form-group">
-                <label for="nombre">Nombre:</label>
+                <strong><label for="nombre">Nombre:</label></strong>
                 <input type="text" class="form-control" id='nombre' v-model="user.nombre" name="usuario" value="">
             </div>
             <div class="form-group">
-                <label for="apellidos">Apellidos:</label>
+                <strong><label for="apellidos">Apellidos:</label></strong>
                 <input type="text" class="form-control" id='apellidos' v-model="user.apellidos" name="apellidos" value="">
             </div>
     
-            <input type="submit" name="enviar" value="Enviar">
+            <input type="submit" value="Registrar" class="btn btn-info enviar">
         </form>
     </div>
 </template>
@@ -102,12 +102,22 @@ export default {
 }
 </script>
 <style>
+#registro{
+    
+    width: 100vw;
+    height: 80vh;
+    min-height: 450px;
+    display: flex;
+    flex-flow: column nowrap;
+    overflow: auto;
+}
+/*}
 .login{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
 
-}
+}*/
 form{
     max-width: 80%;
     text-align: center;

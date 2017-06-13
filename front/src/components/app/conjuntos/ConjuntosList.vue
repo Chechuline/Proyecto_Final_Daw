@@ -1,31 +1,36 @@
 <template>
   <div id='conjuntos'>
-    <div>
+    <h3>
       {{msg}}
-    </div>
+    </h3>
     <div class="alert alert-danger" role="alert" v-if="error">
       {{error}}
     </div>
-    <div>
-      <router-link :to="{name:'crearConjunto',params: {userId:userId}}">Nuevo</router-link>
-      <br/>
-      <label for="buscar">Buscar</label>
-      <input type="text" v-model='buscar'>
+    <div class="contenedorSup">
+      <div>
+        <router-link :to="{name:'crearConjunto',params: {userId:userId}}">Nuevo</router-link>
+      </div>
+      <div class="buscar">
+        <div class="form-inline">
+            <input class="form-control" type="text" v-model='buscar' placeholder="Buscar">
+          </div>
+      </div>
+      
     </div>
     <div id='conjuntos-list'>
       <ul v-if='conjuntos'>
         <li v-for="conjunto in conjuntos">
-          <span>{{conjunto.nombre}}</span>
+          <h4>{{conjunto.nombre}}</h4>
           <p>
-            <router-link :to="{name:'conjunto',params: {userId:userId,setId: conjunto._id}}">Ver</router-link>
-            <router-link :to="{name:'editarConjunto', params: {userId:userId,setId: conjunto._id}, props: {editable:true}}">Editar</router-link>
-            <span v-if="showBorrar != conjunto._id">
+            <router-link class="btn btn-outline-success" :to="{name:'conjunto',params: {userId:userId,setId: conjunto._id}}">Ver</router-link>
+            <router-link class="btn btn-outline-warning" :to="{name:'editarConjunto', params: {userId:userId,setId: conjunto._id}, props: {editable:true}}">Editar</router-link>
+            <span class="btn btn-outline-danger" v-if="showBorrar != conjunto._id">
               <a @click="borrarConjunto(conjunto._id)">Eliminar</a>
             </span>
             <span v-else>
               <p>¿Seguro?
-                <button @click="cancelarBorrar">No</button>
-                <button @click="confirmarBorrar(conjunto)">Si</button>
+                <button class="btn btn-outline-success" @click="cancelarBorrar">No</button>
+                <button class="btn btn-outline-danger" @click="confirmarBorrar(conjunto)">Si</button>
               </p>
             </span>
           </p>
@@ -128,13 +133,48 @@ export default {
   text-align: center;
   max-width: 70%;
 }*/
-
-#conjuntos-list>ul>li{
-  margin-top: 10px;
-  width: 30%;
-  height: 120px;
-  border: 1px solid #ddd;
-  background: #eee;
-  overflow: hidden;
+.contenedorSup{
+  width:100%;
+  display:flex;
+  flex-flow: row nowrap;
+  align-content: center;
 }
+
+.contenedorSup > div{
+  width:40vw;
+  height: 40px;
+}
+.buscar {
+  display: flex;
+  flex-flow: row nowrap;
+}
+#conjuntos-list {
+  list-style: none;
+}
+
+#conjuntos-list>ul>li {
+  margin: 10px 5px;
+  padding-top: 2px;
+  width: 30%;
+  min-width: 184px;
+  height: 140px;
+  background: linear-gradient(to bottom, rgba(250,245,235,0) 0%, rgba(239,234,209,1) 80%, rgba(235,226,198,1) 92%, rgba(234,217,190,1) 100%);
+}
+
+
+
+/*small size*/
+
+@media all and (min-width: 320px) and (max-width: 640px) {
+  #conjuntos-list>ul>li {
+    display: block;
+    width: 90%;
+  }
+}
+
+
+
+/*medium size*/
+
+@media all and (min-width: 481px) and (max-width: 640px) {}
 </style>

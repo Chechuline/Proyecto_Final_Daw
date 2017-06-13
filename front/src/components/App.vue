@@ -67,10 +67,6 @@ export default {
   justify-content: space-between;
 }
 
-*{
-  background-color: lightcyan; 
-}
-
 h1, h2 {
   font-weight: normal;
 }

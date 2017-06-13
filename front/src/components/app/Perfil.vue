@@ -1,13 +1,24 @@
 <template>
   <div id='perfil'>
-    <div>
+    <h2>
       {{msg}}
-    </div>
-    <div class="alert alert-danger" role="alert" v-if="error">
+    </h2>
+    <span class="alert alert-danger" role="alert" v-if="error">
       {{error}}
-    </div>
+    </span>
     <p>
-      {{datos}}
+      <p>
+        <strong>Nombre:</strong> {{datos.nombre}}
+      </p>
+      <p>
+        <strong>Apellidos:</strong> {{datos.apellidos}}
+      </p>
+      <p>
+        <strong>Email:</strong> {{datos.email}}
+      </p>
+      <p>
+        <strong>Nombre de usuario:</strong> {{datos.usuario}}
+      </p>
     </p>
   </div>
 </template>
@@ -61,9 +72,5 @@ export default {
 }
 </script>
 <style>
-#perfil {
-  float: right;
-  text-align: center;
-  width: 90%;
-}
+
 </style>
