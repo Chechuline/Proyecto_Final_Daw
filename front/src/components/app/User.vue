@@ -29,13 +29,8 @@ export default {
   height: 94vh;
   max-height: 94vh;
   overflow:auto;
-  background-color: rgba(242, 135, 115,0.1);
-  /*background-image: url('http://localhost:8080/dist/img/armario.jpg');
-  background-position: 10%;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-color: rgba(0,0,0,0.2);*/
-  /*justify-content: center;*/
+
+  background-color: rgba(243,250,254,1);
 
 }
 

@@ -128,11 +128,9 @@ export default {
 }
 </script>
 <style>
-/*#conjuntos{
-  float: right;
-  text-align: center;
-  max-width: 70%;
-}*/
+#conjuntos{
+  background-color: rgba(243,250,254,1);
+}
 .contenedorSup{
   width:100%;
   display:flex;
@@ -158,7 +156,7 @@ export default {
   width: 30%;
   min-width: 184px;
   height: 140px;
-  background: linear-gradient(to bottom, rgba(250,245,235,0) 0%, rgba(239,234,209,1) 80%, rgba(235,226,198,1) 92%, rgba(234,217,190,1) 100%);
+  background-color: rgba(207,235,253,.5);
 }
 
 

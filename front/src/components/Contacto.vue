@@ -1,9 +1,9 @@
 <template>
     
     <div class="contacto">
-      <h2>Esto es la {{msg}}</h2>
-      <p>Nombre: {{name}}</p>
-      <p>email: {{contact}}</p>
+      <h2>{{msg}}</h2>
+      <h4><strong>Nombre:</strong> {{nombre}}</h4>
+      <h4><strong>Email:</strong> {{contacto}}</h4>
       <p><a @click="goLinkedIn">LinkedIn</a></p>
     </div>
 </template>
@@ -13,9 +13,9 @@ export default {
   name: 'contacto',
   data () {
     return {
-      msg: 'Pagina Contacto',
-      contact: 'jscentelladev@gmail.com',
-      name: 'Jesús Sabroso',
+      msg: 'Desarrollado por:',
+      contacto: 'jscentelladev@gmail.com',
+      nombre: 'Jesús Sabroso',
       LinkedIn: 'https://www.linkedin.com/in/jes%C3%BAs-sabroso-centella-1a08b588/'
     }
   },
@@ -29,5 +29,8 @@ export default {
 <style>
 .contacto{
   width: 95vw;
+}
+.contacto > h2{
+  padding-top: 5%;
 }
 </style>

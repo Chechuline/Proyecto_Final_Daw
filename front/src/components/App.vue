@@ -65,8 +65,11 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  background-color: rgba(243,250,254,1);
 }
-
+html{
+  background-color: rgba(243,250,254,1);
+}
 h1, h2 {
   font-weight: normal;
 }

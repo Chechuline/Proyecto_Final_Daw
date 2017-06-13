@@ -80,15 +80,14 @@ export default {
 <style>
 .izq {
     color: lightblue;
-    background: rgba(239, 197, 202, 1);
-    background: linear-gradient(to right, rgba(239, 197, 202, 1) 0%, rgba(186, 39, 55, 1) 1%, rgba(210, 75, 90, 1) 50%, rgba(242, 132, 115, 1) 100%);
+    background: linear-gradient(to right, rgba(135,206,250,1) 0%, rgba(135,206,250,1) 20%, rgba(207,235,253,1) 80%, rgba(243,250,254,1) 100%);
     display: flex;
     flex-flow: column nowrap;
     order: 0;
     width: 20vw;
     max-width: 20vw;
     height: 94vh;
-    border-right: 1px solid black;
+    
 }
 
 .izq ul {
@@ -105,6 +104,7 @@ export default {
 
 .izq ul>div {
     padding: 10px 0px 10px 0px;
+    color: black;
 }
 
 .izq a {
@@ -113,7 +113,7 @@ export default {
     transition: color .5s;
 }
 .izq a:hover{
-    color:black;
+    color:navy;
 }
 
 #burguerMenu>input {
@@ -198,7 +198,7 @@ export default {
         
         overflow:auto;
         background: rgba(239, 197, 202, 1);
-        background: linear-gradient(to right, rgba(210, 75, 90, 1) 0%, rgba(242, 132, 115, 1) 100%);
+        background: linear-gradient(to right, rgba(135,206,250,1) 0%, rgba(135,206,250,1) 20%, rgba(207,235,253,1) 99%, rgba(255,255,255,1) 100%);
 
         position: relative;
         display: flex;

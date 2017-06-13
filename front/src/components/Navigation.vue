@@ -46,7 +46,7 @@ export default {
 <style>
 /*normal size*/
 #navigation {
-    background-color: lightsalmon;
+    background-color: lightskyblue;
 
     min-height: 20px;
     height: 10vh;
@@ -63,7 +63,7 @@ export default {
 }
 
 #navigation>ul {
-    background-color: lightsalmon;
+    background-color: lightskyblue;
     margin:0;
     padding:0;
     width: 60%;
@@ -77,14 +77,12 @@ export default {
 #navigation>ul> li {
     padding: 10px 20px 0px 20px;
     width: 25vw;
-    /*padding: 10px 0px 10px 0px;*/
-    background-color: lightsalmon;
+
     margin: 0;
     transition: background-color .3s ease;
-    /*padding-top:10px;*/
 }
 #navigation>ul> li:hover {
-    background-color: salmon;
+    background-color: deepskyblue;
 }
 #navigation a{
     text-decoration: none;
@@ -92,7 +90,7 @@ export default {
 }
 #navigation a:active{
     text-decoration: none;
-    color: darksalmon;
+    color: blue;
 }
 /*small size*/
 @media all and (min-width: 320px) and (max-width: 480px) {
